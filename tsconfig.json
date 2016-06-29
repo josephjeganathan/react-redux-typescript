@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "experimentalDecorators": true,
-        "target": "es5",
-        "noImplicitAny": true,
-        "sourceMap": false,
-        "jsx": "react"
-    },
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "target": "es5",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
