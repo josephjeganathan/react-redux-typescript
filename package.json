@@ -1,5 +1,5 @@
 {
-  "name": "react-ts-boilerplate",
+  "name": "react-ts-example",
   "version": "0.1.0",
   "description": "React, TypeScript, HMR, Webpack...",
   "main": "index.js",
