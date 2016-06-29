@@ -1,8 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var SRC_DIR = path.join(__dirname, 'src'); 
-
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
@@ -16,18 +14,23 @@ module.exports = {
     preLoaders: [{
       test: /\.tsx?$/,
       loader: 'tslint',
-      include: SRC_DIR
+      include: path.join(__dirname, 'src')
     }],
-    loaders: [
-      { test: /\.tsx?$/, loaders: ['react-hot', 'ts-loader'], include: path.join(__dirname, 'src') }
-    ]
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/static/'
+    loaders: [{
+      test: /\.tsx?$/,
+      loaders: [
+        'react-hot',
+        'ts-loader'
+      ],
+      include: path.join(__dirname, 'src')
+    }]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+  output: {
+    filename: 'bundle.js',
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/dist/'
+  },
 }
