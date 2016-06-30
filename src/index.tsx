@@ -1,7 +1,15 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import { App } from './components/App';
+import { Provider } from 'react-redux';
+import { createAppStore } from './store';
+import todoApp from './reducers';
+import App from './components/App';
 
-// this file can't be hot reloaded, so if you change
-// it you'll need to reload the page
-render(<App />, document.getElementById('app'));
+let store = createAppStore();
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);

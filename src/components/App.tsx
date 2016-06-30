@@ -1,17 +1,14 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { HelloWorld } from './HelloWorld';
+import { Footer } from './Footer';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 
-interface IHotModule {
-  hot?: { accept: (path: string, callback: () => void) => void };
-};
+const App = () => (
+  <div>
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
+  </div>
+);
 
-declare const module: IHotModule;
-
-export class App extends React.Component<{}, {}> {
-  render() {
-    return (
-      <HelloWorld name={'John Smith'} />
-    );
-  }
-}
+export default App;
