@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TodoRow } from './TodoRow';
-import { Todo } from '../models/Todo';
+import { Todo } from '../../models/Todo';
 
 interface TodoListProp {
   todos: Todo[];

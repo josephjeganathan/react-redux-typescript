@@ -42,9 +42,11 @@ class AddTodo extends React.Component<any, AddTodoState> {
   render() {
     return (
       <div>
-        <form onSubmit={this.saveTodo }>
-          <input name='text' value={this.state.text} onChange={this.handleChange} />
-          <button type='submit'>
+        <form onSubmit={this.saveTodo } className='form-inline'>
+          <div className='form-group'>
+            <input name='text' value={this.state.text} onChange={this.handleChange} className='form-control' />
+          </div>
+          <button type='submit' className='btn btn-info'>
             Add Todo
           </button>
         </form>
