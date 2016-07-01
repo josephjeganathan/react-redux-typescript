@@ -6,7 +6,7 @@ interface LinkProp {
   onClick: Function;
 }
 
-class Link extends React.Component<LinkProp, any> {
+export class Filter extends React.Component<LinkProp, any> {
 
   constructor(props: any, context: any) {
     super(props, context);
@@ -25,16 +25,8 @@ class Link extends React.Component<LinkProp, any> {
 
     let { active, children } = this.props;
 
-    if (active) {
-      return (<span>{children}</span>);
-    }
-
     return (
-      <a href='#' onClick={this.filter}>
-        {children}
-      </a>
+      <button type='button' className='btn btn-default' onClick={this.filter} disabled={active}>{children}</button>
     );
   }
 }
-
-export default Link;

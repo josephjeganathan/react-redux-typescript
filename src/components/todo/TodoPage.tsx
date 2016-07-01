@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Footer } from './Footer';
+import { FilterGroup } from './FilterGroup';
 import AddTodo from '../../containers/AddTodo';
 import VisibleTodoList from '../../containers/VisibleTodoList';
 
 export const TodoPage = () => (
-  <div>
-    <h1>TODOS</h1>
+  <div className='container'>
     <AddTodo />
+    <hr />
     <VisibleTodoList />
-    <Footer />
+    <hr />
+    <FilterGroup />
   </div>
 );

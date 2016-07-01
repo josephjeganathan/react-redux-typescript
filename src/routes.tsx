@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 import { App } from './components/App';
 import { HomePage } from './components/home/HomePage';
-import { TodoPage } from './components/todo/TodoPage'; // eslint-disable-line import/no-named-as-default
+import { TodoPage } from './components/todo/TodoPage';
 import { AboutPage } from './components/about/AboutPage';
 import { NotFoundPage } from './components/notfound/NotFoundPage';
 

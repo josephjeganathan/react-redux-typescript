@@ -14,7 +14,7 @@ export class TodoList extends React.Component<TodoListProp, any> {
     let { todos, onTodoClick } = this.props;
 
     return (
-      <ul>
+      <div>
         {todos.map((todo: any) =>
           <TodoRow
             key={todo.id}
@@ -22,7 +22,7 @@ export class TodoList extends React.Component<TodoListProp, any> {
             onClick={() => onTodoClick(todo.id) }
             />
         ) }
-      </ul>
+      </div>
     );
   }
 }
