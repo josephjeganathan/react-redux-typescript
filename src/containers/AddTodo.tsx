@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions';
+import { TextInputInline } from '../components/common/TextInputInline';
 
 interface AddTodoState {
   text: string;
@@ -43,9 +44,9 @@ class AddTodo extends React.Component<any, AddTodoState> {
     return (
       <div>
         <form onSubmit={this.saveTodo } className='form-inline'>
-          <div className='form-group'>
-            <input name='text' value={this.state.text} onChange={this.handleChange} className='form-control' />
-          </div>
+
+          <TextInputInline name='text' onChange={this.handleChange} value={this.state.text} />
+
           <button type='submit' className='btn btn-info'>
             Add Todo
           </button>
