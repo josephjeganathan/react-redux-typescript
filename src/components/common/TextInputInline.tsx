@@ -27,7 +27,6 @@ export class TextInputInline extends React.Component<TextInputInlineProps, any> 
     return (
       <div className={wrapperClass}>
         {labelElement}
-        <label htmlFor={name}>{label}</label>
         <input
           type='text'
           name={name}
