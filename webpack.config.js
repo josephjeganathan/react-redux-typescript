@@ -15,14 +15,27 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'tslint', include: path.join(__dirname, 'src') }
     ],
     loaders: [
-      { test: /\.tsx?$/, loaders: ['react-hot', 'ts-loader'], include: path.join(__dirname, 'src') },
+      {
+        test: /\.tsx?$/,
+        loaders: ['react-hot', 'ts-loader'],
+        include: path.join(__dirname, 'src')
+      },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=100000'
       },
-      { test: /\.(jpe?g|png|gif)$/i, loaders: ['file'] },
-      { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
-      { test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
+      {
+        test: /\.(jpe?g|png|gif)$/i,
+        loaders: ['file']
+      },
+      {
+        test: /\.ico$/,
+        loader: 'file-loader?name=[name].[ext]'
+      },
+      {
+        test: /(\.css|\.scss)$/,
+        loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
+      }
     ]
   },
   plugins: [
