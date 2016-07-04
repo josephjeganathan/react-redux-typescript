@@ -12,11 +12,11 @@ import { Todo } from './models/Todo';
 
 let store = createAppStore();
 
-var socket = io('http://localhost:8001');
-socket.on('TodoAdded', function(todo:Todo){
+let socket = io('http://localhost:8001');
+socket.on('TodoAdded', function (todo: Todo) {
   store.dispatch(addTodoSuccess(todo));
 });
-socket.on('TodoToggled', function(todo:Todo){
+socket.on('TodoToggled', function (todo: Todo) {
   store.dispatch(toggleTodoSuccess(todo.id));
 });
 

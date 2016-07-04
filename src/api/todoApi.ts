@@ -18,7 +18,7 @@ export class TodoApi {
         .catch(function (error) {
           reject(error);
         });
-    })
+    });
   }
 
   static addTodo(text: string) {
@@ -38,7 +38,7 @@ export class TodoApi {
         .catch(function (error) {
           reject(error);
         });
-    })
+    });
   }
 
   static toggleTodo(id: number) {
@@ -58,6 +58,6 @@ export class TodoApi {
         .catch(function (error) {
           reject(error);
         });
-    })
+    });
   }
 }
