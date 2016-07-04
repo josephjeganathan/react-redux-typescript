@@ -6,9 +6,10 @@ import { Router, browserHistory } from 'react-router';
 import todoApp from './reducers';
 import routes from './routes';
 import { loadTodos, addTodoSuccess, toggleTodoSuccess } from './actions/';
-import 'bootstrap/dist/css/bootstrap.css';
 import * as io from 'socket.io-client';
 import { Todo } from './models/Todo';
+import 'bootstrap/dist/css/bootstrap.css';
+import './styles.css';
 
 let store = createAppStore();
 

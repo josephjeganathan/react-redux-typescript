@@ -10,15 +10,7 @@ export class TodoApi {
       method: 'GET'
     };
 
-    return new Promise<Todo[]>((resolve, reject) => {
-      axios(options)
-        .then(function (response) {
-          resolve(response.data as Todo[]);
-        })
-        .catch(function (error) {
-          reject(error);
-        });
-    });
+    return axios(options).then(response => response.data as Todo[]);
   }
 
   static addTodo(text: string) {
@@ -30,15 +22,7 @@ export class TodoApi {
       method: 'POST'
     };
 
-    return new Promise<Todo>((resolve, reject) => {
-      axios(options)
-        .then(function (response) {
-          resolve(response.data as Todo);
-        })
-        .catch(function (error) {
-          reject(error);
-        });
-    });
+    return axios(options).then(response => response.data as Todo);
   }
 
   static toggleTodo(id: number) {
@@ -50,14 +34,6 @@ export class TodoApi {
       method: 'POST'
     };
 
-    return new Promise((resolve, reject) => {
-      axios(options)
-        .then(function (response) {
-          resolve(response.data as Todo);
-        })
-        .catch(function (error) {
-          reject(error);
-        });
-    });
+    return axios(options).then(response => response.data as Todo);
   }
 }

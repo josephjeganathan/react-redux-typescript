@@ -12,14 +12,9 @@ export class TodoRow extends React.Component<TodoProp, any> {
     let checkIcon = completed ? 'glyphicon glyphicon-check' : 'glyphicon glyphicon-unchecked';
 
     return (
-      <div onClick={onClick}>
+      <div onClick={onClick} className={completed ? 'todo completed' : 'todo'}>
         <span className={checkIcon}></span>
-        <span
-          style={{
-            textDecoration: completed ? 'line-through' : 'none',
-            cursor: 'pointer'
-          }}
-          >{text}</span>
+        <span className='todo-text'>{text}</span>
       </div>
     );
   }
