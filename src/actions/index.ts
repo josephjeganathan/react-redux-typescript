@@ -1,22 +1,62 @@
-let nextTodoId = 0;
-export const addTodo = (text: string) => {
+import { TodoApi } from '../api/todoApi';
+import { Todo } from '../models/Todo';
+import * as actionTypes from '../constants/actionTypes';
+
+export const loadTodosSuccess = (todos: Todo[]) => {
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+    type: actionTypes.LOAD_TODOS,
+    todos
+  };
+};
+
+export const addTodoSuccess = (todo: Todo) => {
+  return {
+    type: actionTypes.ADD_TODO,
+    todo
+  };
+};
+
+export const toggleTodoSuccess = (id: number) => {
+  return {
+    type: actionTypes.TOGGLE_TODO,
+    id
   };
 };
 
 export const setVisibilityFilter = (filter: string) => {
   return {
-    type: 'SET_VISIBILITY_FILTER',
+    type: actionTypes.SET_VISIBILITY_FILTER,
     filter
   };
 };
 
-export const toggleTodo = (id: number) => {
-  return {
-    type: 'TOGGLE_TODO',
-    id
-  };
+export const loadTodos = () => (dispatch: any) => {
+  return TodoApi.loadTodos()
+    .then(todos => {
+      dispatch(loadTodosSuccess(todos));
+    })
+    .catch(err => {
+      throw (err);
+    });
 };
+
+export const addTodo = (text: string) => (dispatch: any) => {
+  return TodoApi.addTodo(text)
+    .then(todo => {
+      dispatch(addTodoSuccess(todo));
+    })
+    .catch(err => {
+      throw (err);
+    });
+};
+
+export const toggleTodo = (id: number) => (dispatch: any) => {
+  return TodoApi.toggleTodo(id)
+    .then(todo => {
+      dispatch(toggleTodoSuccess(id));
+    })
+    .catch(err => {
+      throw (err);
+    });
+};
+
