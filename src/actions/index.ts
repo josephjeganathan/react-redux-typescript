@@ -41,22 +41,10 @@ export const loadTodos = () => (dispatch: any) => {
 };
 
 export const addTodo = (text: string) => (dispatch: any) => {
-  return TodoApi.addTodo(text)
-    .then(todo => {
-      dispatch(addTodoSuccess(todo));
-    })
-    .catch(err => {
-      throw (err);
-    });
+  return TodoApi.addTodo(text);
 };
 
 export const toggleTodo = (id: number) => (dispatch: any) => {
-  return TodoApi.toggleTodo(id)
-    .then(todo => {
-      dispatch(toggleTodoSuccess(id));
-    })
-    .catch(err => {
-      throw (err);
-    });
+  return TodoApi.toggleTodo(id);
 };
 
