@@ -6,6 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import todoApp from './reducers';
 import routes from './routes';
 import 'bootstrap/dist/css/bootstrap.css';
+import './styles.css';
 
 
 let store = createAppStore();

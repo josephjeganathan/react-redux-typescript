@@ -1,0 +1,24 @@
+.todo {
+  padding: 10px;
+  border-width: 0px 1px 1px 4px;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: dashed;
+  border-color: #ccc;
+  font-family:  'Archivo Narrow';
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.todo.completed{
+  color: #D00;
+}
+
+.todo.completed span.todo-text{
+  text-decoration: line-through;
+}
+
+.todo span.glyphicon{
+  padding-right: 5px;
+}
