@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
+import * as thunk from 'redux-thunk';
 
 const logger = (store: any) => (next: any) => (action: any) => {
   console.group(action.type);
@@ -11,4 +12,4 @@ const logger = (store: any) => (next: any) => (action: any) => {
   return result;
 };
 
-export const createAppStore = () => createStore(rootReducer, applyMiddleware(logger));
+export const createAppStore = () => createStore(rootReducer, applyMiddleware(thunk.default, logger));
